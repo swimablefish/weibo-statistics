@@ -1,0 +1,8 @@
+{
+ "data-dir" : "./data"
+ "user-num" : 5 
+ "weibo-num" : 200 
+ "user" : ""
+ "top-n" : 100
+ "access-token" : ""
+}

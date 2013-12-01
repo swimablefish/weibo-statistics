@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Weibo Statistics</title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript">
+$(function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'weibo statistics'
+            },
+            subtitle: {
+                text: 'Source: weibo'
+            },
+            xAxis: {
+                categories: [ @categories@ ], 
+                labels: {rotation: -90, align: 'right', style: { font: 'normal 6px Verdana, sans-serif'}}},
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'count'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: '',
+                data: [@data@]
+            }]
+        });
+    });
+    
+
+		</script>
+	</head>
+	<body>
+<script src="js/highcharts.js"></script>
+<script src="js/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>
