@@ -6,7 +6,8 @@
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [clj-http "0.7.7"]
                  [clj-time "0.6.0"]
+                 [log4j/log4j "1.2.16"]
                  [org.clojure/tools.logging "0.2.6"]
                  [org.clojure/data.json "0.2.3"]]
-  :resource-paths ["lib/*"]
+  :resource-paths ["lib/*" "resources"]
   :main weibo-statistics.core)
